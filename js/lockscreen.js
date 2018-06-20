@@ -1,8 +1,4 @@
 $(document).ready(function() {
-    $.getScript('../loading-bar/loading-bar.js', function() {
-    alert('Load was performed.');
-    });
-
     var secret = 1234;
 
     $("#pin").on('input', function() {
