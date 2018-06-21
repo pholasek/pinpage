@@ -1,5 +1,18 @@
 $(document).ready(function() {
     var secret = 1234;
+    var bar1 = new ldBar("#loadbar");
+    bar1.set(0);
+    var end = 0;
+    var start = 3 * 60 * 1000;
+    var curr = start;
+
+    $("#startdia").dialog();
+
+    setInterval(function() {
+        bar1.set(100 - Math.round(curr / start * 100));
+        curr -= 1000;
+        },
+     1000);
 
     $("#pin").on('input', function() {
         $("#status").text("");
@@ -8,6 +21,4 @@ $(document).ready(function() {
                 $("#status").text("UNLOCKED");
         }
     });
-    var lb = ldBar($("#loadbar"));
-    lb.set(60);
 });
