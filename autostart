@@ -1,0 +1,1 @@
+/home/pi/xlunch/xlunch-3.2.9/xlunch --dontquit --noprompt --center --iconsize 256 --input /etc/xlunch/entries.dsv

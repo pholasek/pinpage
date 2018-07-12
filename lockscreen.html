@@ -45,20 +45,64 @@
         height: 50%;
         margin: auto;
     }
+    html {
+        height : 100%;
+        width : 100%;
+    }
     body {
+        height: 100%;
+        width : 100%;
         background-color: black;
+    }
+    .screen {
+        height: 100%;
+        width : 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .subscreen {
+        display: none;
+    }
+    #startScreen {
+        color: red;
+        font-family: monospace;
+        font-size: 96px;
+        text-align: center;
+    }
+    #okScreen {
+        color: green;
+        font-family: monospace;
+        font-size: 96px;
+        text-align: center;
     }
 </style>
 <body>
-    <input type="text" id="pin" size="4" maxlength="4" autofocus/><br />
-    <div id="status"></div>
-    <div
-      class="ldBar"
-      style="width:50%;height:70%;"
-      data-preset="energy"
-      id="loadbar">
+    <div class="screen">
+        <!-- Start blank black screen -->
+        <div class="subscreen">
+        </div>
+        <!-- Spusten tichy alarm -->
+        <div class="subscreen">
+            <span id="startScreen">Spusten tichy alarm!</span>
+        </div>
+        <!-- Odpocet -->
+        <div class="subscreen">
+            <input type="text" id="pin" size="4" maxlength="4" autofocus/><br />
+            <div id="status"><span>Probiha odesilani dat:</span></div>
+            <div
+              class="ldBar"
+              style="width:50%;height:70%;"
+              data-preset="energy"
+              id="loadbar">
+            </div>
+        </div>
+        <!-- Odesilani zastaveno -->
+        <div class="subscreen">
+            <span id="okScreen">ODESILANI ZASTAVENO</p>
+        </div>
     </div>
-    <div id="startdia" title="haloo"><p>Zaciname</p></div>
 </body>
 
 </html>
