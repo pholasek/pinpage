@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="loading-bar/loading-bar.js" type="text/javascript"></script>
+    <script src="js/config.js" type="text/javascript"></script>
     <script src="js/lockscreen.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="loading-bar/loading-bar.css"/>
 </head>
@@ -37,7 +38,7 @@
     .ldBar-label {
         color: red;
         font-family: monospace;
-        font-size: 24px;
+        font-size: 80px;
         text-align: center;
     }
     .ldBar {
@@ -65,7 +66,17 @@
     .subscreen {
         display: none;
     }
+    #timeScreen {
+        height: 100%;
+        width : 100%;
+    }
     #startScreen {
+        color: red;
+        font-family: monospace;
+        font-size: 96px;
+        text-align: center;
+    }
+    #stopScreen {
         color: red;
         font-family: monospace;
         font-size: 96px;
@@ -75,6 +86,13 @@
         color: green;
         font-family: monospace;
         font-size: 96px;
+        text-align: center;
+    }
+    #status {
+        font-size: 72px;
+        text-align: center;
+        font-family: monospace;
+        color: green;
         text-align: center;
     }
 </style>
@@ -88,19 +106,22 @@
             <span id="startScreen">Spusten tichy alarm!</span>
         </div>
         <!-- Odpocet -->
-        <div class="subscreen">
+        <div class="subscreen" id="timeScreen">
             <input type="text" id="pin" size="4" maxlength="4" autofocus/><br />
-            <div id="status"><span>Probiha odesilani dat:</span></div>
+            <span id="status">Probiha odesilani dat...</span>
             <div
               class="ldBar"
-              style="width:50%;height:70%;"
+              style="width:50%;height:30%;"
               data-preset="energy"
               id="loadbar">
             </div>
         </div>
         <!-- Odesilani zastaveno -->
         <div class="subscreen">
-            <span id="okScreen">ODESILANI ZASTAVENO</p>
+            <span id="okScreen">ODESILANI ZASTAVENO.</p>
+        </div>
+        <div class="subscreen">
+            <span id="stopScreen">ODESILANI DOKONCENO.</p>
         </div>
     </div>
 </body>
