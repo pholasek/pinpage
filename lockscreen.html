@@ -70,6 +70,7 @@
     #timeScreen {
         height: 100%;
         width : 100%;
+        text-align : center;
     }
     #startScreen {
         color: red;
@@ -104,12 +105,12 @@
         </div>
         <!-- Spusten tichy alarm -->
         <div class="subscreen">
-            <span id="startScreen">Spusten tichy alarm!</span>
+            <span id="startScreen">Silent alarm was activated!</span>
         </div>
         <!-- Odpocet -->
         <div class="subscreen" id="timeScreen">
+            <span id="status"><br/><br/>Sending data...</span>
             <input type="text" id="pin" size="4" maxlength="4" autofocus/><br />
-            <span id="status">Probiha odesilani dat...</span>
             <div
               class="ldBar"
               style="width:50%;height:30%;"
@@ -119,10 +120,12 @@
         </div>
         <!-- Odesilani zastaveno -->
         <div class="subscreen">
-            <span id="okScreen">ODESILANI ZASTAVENO.</p>
+            <p id="okScreen">SENDING DATA ABORTED.</p>
         </div>
         <div class="subscreen">
-            <span id="stopScreen">ODESILANI DOKONCENO.</p>
+            <p id="stopScreen">SENDING DATA COMPLETED.<br/>
+                escape PIN: XY89-23Z3
+            </p>
         </div>
     </div>
 </body>
