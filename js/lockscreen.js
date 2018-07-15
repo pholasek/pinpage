@@ -5,7 +5,7 @@ $(document).ready(function() {
     $("#pin").attr('maxlength',secret_len);
     var secret = lockscreenConfig.pin;
     var escape = lockscreenConfig.escape;
-    $("#okScreen").append(escape);
+    //$("#okScreen").append(escape);
     var bar1 = new ldBar("#loadbar");
     bar1.set(0);
     var end = 0;
@@ -37,7 +37,7 @@ $(document).ready(function() {
                 curr -= 1000;
                 if (curr < 0) {
                     clearInterval(intervalID);
-                    plusSlides(2);
+                    plusSlides(3);
                 }
                 },
              1000);
@@ -61,6 +61,7 @@ $(document).ready(function() {
                 //$("#status").text("UNLOCKED");
                 clearInterval(intervalID);
                 plusSlides(1);
+                $(this).delay(5000).queue(function(n) { plusSlides(1); n();});
             } else {
                 $("#pin").delay(1000).queue(function(n) { $(this).val(""); n();});
             }
