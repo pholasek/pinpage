@@ -3,6 +3,9 @@ $(document).ready(function() {
     var secret = lockscreenConfig.pin;
     var secret_len = secret.toString().length
     $("#pin").attr('maxlength',secret_len);
+    var secret = lockscreenConfig.pin;
+    var escape = lockscreenConfig.escape;
+    $("#okScreen").append(escape);
     var bar1 = new ldBar("#loadbar");
     bar1.set(0);
     var end = 0;
